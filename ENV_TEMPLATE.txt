@@ -1,0 +1,47 @@
+# ===========================================
+# Email Configuration for ReadAfrik
+# ===========================================
+# Copy this file's contents to create .env.local in your project root
+# Then uncomment and fill in the values for your chosen email service
+
+# Email Service (choose one: console, resend, sendgrid, nodemailer)
+EMAIL_SERVICE=console
+
+# Application Settings
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+ADMIN_EMAIL=admin@readafrik.com
+
+# ===========================================
+# OPTION 1: RESEND (Recommended)
+# ===========================================
+# Uncomment these lines to use Resend:
+# EMAIL_SERVICE=resend
+# RESEND_API_KEY=re_your_api_key_here
+# EMAIL_FROM=ReadAfrik <noreply@yourdomain.com>
+
+# ===========================================
+# OPTION 2: SENDGRID
+# ===========================================
+# Uncomment these lines to use SendGrid:
+# EMAIL_SERVICE=sendgrid
+# SENDGRID_API_KEY=SG.your_api_key_here
+# EMAIL_FROM=noreply@yourdomain.com
+
+# ===========================================
+# OPTION 3: NODEMAILER (SMTP)
+# ===========================================
+# Uncomment these lines to use SMTP:
+# EMAIL_SERVICE=nodemailer
+# SMTP_HOST=smtp.gmail.com
+# SMTP_PORT=587
+# SMTP_SECURE=false
+# SMTP_USER=your-email@gmail.com
+# SMTP_PASS=your-app-password
+# EMAIL_FROM=your-email@gmail.com
+
+# ===========================================
+# DATABASE (Optional)
+# ===========================================
+# Uncomment to save registrations to database:
+# DATABASE_URL=postgresql://user:password@localhost:5432/readafrik
+
