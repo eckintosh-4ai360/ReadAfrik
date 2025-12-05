@@ -73,7 +73,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,8 +84,8 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-full transition-colors duration-300">
-                <Rocket className="h-12 w-12 text-blue-600 dark:text-blue-400" />
+              <div className="bg-orange-100 dark:bg-blue-900 p-4 rounded-full transition-colors duration-300">
+                <Rocket className="h-12 w-12 text-orange-600 dark:text-blue-400" />
               </div>
             </div>
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -155,8 +155,8 @@ const AboutPage = () => {
                 className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-700 p-8 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-lg transition-colors duration-300">
-                    <value.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  <div className="flex-shrink-0 bg-orange-100 dark:bg-blue-900 p-3 rounded-lg transition-colors duration-300">
+                    <value.icon className="h-8 w-8 text-orange-600 dark:text-blue-400" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -239,7 +239,7 @@ const AboutPage = () => {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                     {member.name}
                   </h3>
-                  <div className="text-blue-600 dark:text-blue-400 font-medium mb-3">
+                  <div className="text-orange-600 dark:text-blue-400 font-medium mb-3">
                     {member.role}
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -272,7 +272,7 @@ const AboutPage = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-blue-600 dark:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 shadow-lg"
+                  className="bg-orange-600 dark:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 dark:hover:bg-blue-600 transition-colors duration-200 shadow-lg"
                 >
                   Explore Resources
                 </motion.button>
@@ -281,7 +281,7 @@ const AboutPage = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-slate-600 transition-colors duration-200"
+                  className="border-2 border-blue-600 dark:border-blue-400 text-orange-600 dark:text-blue-400 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-slate-600 transition-colors duration-200"
                 >
                   Contact Us
                 </motion.button>

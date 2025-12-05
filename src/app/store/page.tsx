@@ -170,7 +170,7 @@ const StorePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {/* Toast Notification */}
       <Toast
         message={toastMessage}
@@ -415,8 +415,8 @@ const StorePage = () => {
                       product.type === 'Free Resource' 
                         ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
                         : product.type === 'Premium'
-                        ? 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200'
-                        : 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+                        ? 'bg-yellow-100 dark:bg-purple-900 text-yellow-800 dark:text-purple-200'
+                        : 'bg-orange-100 dark:bg-blue-900 text-orange-800 dark:text-blue-200'
                     }`}>
                       {product.type}
                     </span>

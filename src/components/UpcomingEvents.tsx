@@ -88,10 +88,10 @@ const UpcomingEvents = () => {
   ];
 
   const categoryColors: { [key: string]: string } = {
-    literacy: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
-    numeracy: 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
-    career: 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200',
-    technology: 'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200'
+    literacy: 'bg-orange-100 dark:bg-blue-900 text-orange-800 dark:text-blue-200',
+    numeracy: 'bg-yellow-100 dark:bg-green-900 text-yellow-800 dark:text-green-200',
+    career: 'bg-orange-100 dark:bg-purple-900 text-orange-800 dark:text-purple-200',
+    technology: 'bg-yellow-100 dark:bg-orange-900 text-yellow-800 dark:text-orange-200'
   };
 
   const formatDate = (dateString: string) => {
@@ -177,7 +177,7 @@ const UpcomingEvents = () => {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section className="py-20 bg-[var(--background)] dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -186,10 +186,10 @@ const UpcomingEvents = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-[var(--foreground)] dark:text-white mb-4">
             Upcoming Events
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--muted)] dark:text-gray-300 max-w-3xl mx-auto">
             Join our community events, workshops, and seminars designed to enhance 
             your teaching skills and professional development.
           </p>
@@ -203,10 +203,10 @@ const UpcomingEvents = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="bg-[var(--card-bg)] dark:bg-slate-800 rounded-2xl shadow-lg border border-[var(--border)] dark:border-slate-700 hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
               {/* Event Header */}
-              <div className="relative p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-800 transition-colors duration-300">
+              <div className="relative p-6 bg-gradient-to-br from-[var(--card-bg)] to-[var(--hover-bg)] dark:from-slate-700 dark:to-slate-800 transition-colors duration-300">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="text-3xl">{event.image}</div>
@@ -217,14 +217,14 @@ const UpcomingEvents = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-lg font-bold text-gray-900 dark:text-white">{event.price}</div>
+                    <div className="text-lg font-bold text-[var(--foreground)] dark:text-white">{event.price}</div>
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                <h3 className="text-xl font-bold text-[var(--foreground)] dark:text-white mb-2 group-hover:text-[var(--primary)] dark:group-hover:text-blue-400 transition-colors duration-200">
                   {event.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                <p className="text-[var(--muted)] dark:text-gray-300 text-sm leading-relaxed">
                   {event.description}
                 </p>
               </div>
@@ -233,25 +233,25 @@ const UpcomingEvents = () => {
               <div className="p-6 space-y-4">
                 {/* Date and Time */}
                 <div className="flex items-center space-x-4">
-                  <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center space-x-2 text-[var(--muted)] dark:text-gray-300">
                     <Calendar className="h-4 w-4" />
                     <span className="text-sm font-medium">{formatDate(event.date)}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center space-x-2 text-[var(--muted)] dark:text-gray-300">
                     <Clock className="h-4 w-4" />
                     <span className="text-sm">{event.time}</span>
                   </div>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <div className="flex items-center space-x-2 text-[var(--muted)] dark:text-gray-300">
                   <MapPin className="h-4 w-4" />
                   <span className="text-sm">{event.location}</span>
                 </div>
 
                 {/* Attendees */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center space-x-2 text-[var(--muted)] dark:text-gray-300">
                     <Users className="h-4 w-4" />
                     <span className="text-sm">
                       {event.attendees}/{event.maxAttendees} registered
@@ -260,9 +260,9 @@ const UpcomingEvents = () => {
                   
                   {/* Progress Bar */}
                   <div className="flex-1 ml-4">
-                    <div className="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                    <div className="w-full bg-[var(--track-bg)] dark:bg-slate-600 rounded-full h-2">
                       <div 
-                        className="bg-blue-600 dark:bg-blue-500 h-2 rounded-full transition-all duration-300"
+                        className="bg-[var(--primary)] dark:bg-blue-500 h-2 rounded-full transition-all duration-300"
                         style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
                       />
                     </div>
@@ -274,7 +274,7 @@ const UpcomingEvents = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleRegister(event.id)}
-                  className="w-full flex items-center justify-center space-x-2 bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 group-hover:shadow-md"
+                  className="w-full flex items-center justify-center space-x-2 bg-[var(--primary)] dark:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--secondary)] dark:hover:bg-blue-600 transition-colors duration-200 group-hover:shadow-md"
                 >
                   <span>Register Now</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -291,11 +291,11 @@ const UpcomingEvents = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border border-gray-200 dark:border-slate-600 transition-colors duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-[var(--card-bg)] dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border border-[var(--border)] dark:border-slate-600 transition-colors duration-300">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] dark:text-white mb-4">
               Don&apos;t Miss Out on Future Events
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-[var(--muted)] dark:text-gray-300 mb-8">
               Stay updated with our latest workshops, seminars, and educational events. 
               Subscribe to our newsletter to get notified about upcoming opportunities.
             </p>
@@ -304,7 +304,7 @@ const UpcomingEvents = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-blue-600 dark:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200"
+                  className="bg-[var(--primary)] dark:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-[var(--secondary)] dark:hover:bg-blue-600 transition-colors duration-200"
                 >
                   View All Events
                 </motion.button>
@@ -313,7 +313,7 @@ const UpcomingEvents = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowSubscribeModal(true)}
-                className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                className="border-2 border-[var(--primary)] dark:border-blue-400 text-[var(--primary)] dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-colors duration-200"
               >
                 Subscribe to Updates
               </motion.button>
@@ -336,7 +336,7 @@ const UpcomingEvents = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative transition-colors duration-300"
+              className="bg-[var(--card-bg)] dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative transition-colors duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -347,17 +347,17 @@ const UpcomingEvents = () => {
               </button>
 
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-[var(--foreground)] dark:text-white mb-2">
                   Event Registration
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-[var(--muted)] dark:text-gray-300">
                   {events.find(e => e.id === selectedEvent)?.title}
                 </p>
               </div>
 
               <form onSubmit={handleRegistrationSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-[var(--muted)] dark:text-gray-300 mb-2">
                     Full Name *
                   </label>
                   <div className="relative">
@@ -367,14 +367,14 @@ const UpcomingEvents = () => {
                       required
                       value={registrationData.name}
                       onChange={(e) => setRegistrationData({ ...registrationData, name: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white bg-white dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
+                      className="w-full pl-10 pr-4 py-3 border border-[var(--border)] dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[var(--foreground)] dark:text-white bg-[var(--card-bg)] dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
                       placeholder="Enter your full name"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-[var(--muted)] dark:text-gray-300 mb-2">
                     Email Address *
                   </label>
                   <div className="relative">
@@ -384,14 +384,14 @@ const UpcomingEvents = () => {
                       required
                       value={registrationData.email}
                       onChange={(e) => setRegistrationData({ ...registrationData, email: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white bg-white dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
+                      className="w-full pl-10 pr-4 py-3 border border-[var(--border)] dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[var(--foreground)] dark:text-white bg-[var(--card-bg)] dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-[var(--muted)] dark:text-gray-300 mb-2">
                     Phone Number
                   </label>
                   <div className="relative">
@@ -400,7 +400,7 @@ const UpcomingEvents = () => {
                       type="tel"
                       value={registrationData.phone}
                       onChange={(e) => setRegistrationData({ ...registrationData, phone: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white bg-white dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
+                      className="w-full pl-10 pr-4 py-3 border border-[var(--border)] dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[var(--foreground)] dark:text-white bg-[var(--card-bg)] dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -410,13 +410,13 @@ const UpcomingEvents = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedEvent(null)}
-                    className="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                    className="flex-1 px-6 py-3 border-2 border-[var(--border)] dark:border-slate-600 text-[var(--muted)] dark:text-gray-300 rounded-lg font-semibold hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-colors duration-200"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200"
+                    className="flex-1 px-6 py-3 bg-[var(--primary)] dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-[var(--secondary)] dark:hover:bg-blue-600 transition-colors duration-200"
                   >
                     Register
                   </button>
@@ -441,7 +441,7 @@ const UpcomingEvents = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative transition-colors duration-300"
+              className="bg-[var(--card-bg)] dark:bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full p-8 relative transition-colors duration-300"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -452,20 +452,20 @@ const UpcomingEvents = () => {
               </button>
 
               <div className="mb-6">
-                <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300">
-                  <Mail className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                <div className="bg-orange-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors duration-300">
+                  <Mail className="h-8 w-8 text-[var(--primary)] dark:text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-[var(--foreground)] dark:text-white mb-2">
                   Subscribe to Event Updates
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-[var(--muted)] dark:text-gray-300">
                   Get notified about upcoming workshops, seminars, and educational events directly to your inbox.
                 </p>
               </div>
 
               <form onSubmit={handleSubscribe} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-[var(--muted)] dark:text-gray-300 mb-2">
                     Email Address *
                   </label>
                   <div className="relative">
@@ -475,13 +475,13 @@ const UpcomingEvents = () => {
                       required
                       value={subscribeEmail}
                       onChange={(e) => setSubscribeEmail(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white bg-white dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
+                      className="w-full pl-10 pr-4 py-3 border border-[var(--border)] dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-[var(--foreground)] dark:text-white bg-[var(--card-bg)] dark:bg-slate-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="bg-blue-50 dark:bg-slate-700 rounded-lg p-4 text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
+                <div className="bg-[var(--hover-bg)] dark:bg-slate-700 rounded-lg p-4 text-sm text-[var(--muted)] dark:text-gray-300 transition-colors duration-300">
                   <p>✓ Weekly event digest</p>
                   <p>✓ Early registration access</p>
                   <p>✓ Exclusive discounts</p>
@@ -492,13 +492,13 @@ const UpcomingEvents = () => {
                   <button
                     type="button"
                     onClick={() => setShowSubscribeModal(false)}
-                    className="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                    className="flex-1 px-6 py-3 border-2 border-[var(--border)] dark:border-slate-600 text-[var(--muted)] dark:text-gray-300 rounded-lg font-semibold hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-colors duration-200"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200"
+                    className="flex-1 px-6 py-3 bg-[var(--primary)] dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-[var(--secondary)] dark:hover:bg-blue-600 transition-colors duration-200"
                   >
                     Subscribe
                   </button>

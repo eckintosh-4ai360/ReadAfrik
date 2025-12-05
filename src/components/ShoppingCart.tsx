@@ -163,7 +163,7 @@ const ShoppingCart: React.FC = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={handleCheckout}
-                      className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+                      className="w-full bg-orange-600 dark:bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 dark:hover:bg-blue-700 transition-colors duration-200"
                     >
                       Proceed to Checkout
                     </motion.button>

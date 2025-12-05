@@ -64,33 +64,33 @@ const FeaturedSections = () => {
 
   const colorClasses: { [key: string]: { bg: string; text: string; border: string; hover: string } } = {
     blue: {
-      bg: 'from-blue-500 to-blue-600',
-      text: 'text-blue-600',
-      border: 'border-blue-200',
-      hover: 'hover:border-blue-300'
+      bg: 'from-orange-500 to-orange-600 dark:from-blue-500 dark:to-blue-600',
+      text: 'text-orange-600 dark:text-blue-600',
+      border: 'border-orange-200 dark:border-blue-200',
+      hover: 'hover:border-orange-300 dark:hover:border-blue-300'
     },
     green: {
-      bg: 'from-green-500 to-green-600',
-      text: 'text-green-600',
-      border: 'border-green-200',
-      hover: 'hover:border-green-300'
+      bg: 'from-yellow-500 to-yellow-600 dark:from-green-500 dark:to-green-600',
+      text: 'text-yellow-600 dark:text-green-600',
+      border: 'border-yellow-200 dark:border-green-200',
+      hover: 'hover:border-yellow-300 dark:hover:border-green-300'
     },
     purple: {
-      bg: 'from-purple-500 to-purple-600',
-      text: 'text-purple-600',
-      border: 'border-purple-200',
-      hover: 'hover:border-purple-300'
+      bg: 'from-orange-400 to-yellow-500 dark:from-purple-500 dark:to-purple-600',
+      text: 'text-orange-600 dark:text-purple-600',
+      border: 'border-orange-200 dark:border-purple-200',
+      hover: 'hover:border-orange-300 dark:hover:border-purple-300'
     },
     orange: {
-      bg: 'from-orange-500 to-orange-600',
-      text: 'text-orange-600',
-      border: 'border-orange-200',
-      hover: 'hover:border-orange-300'
+      bg: 'from-yellow-500 to-orange-500 dark:from-orange-500 dark:to-orange-600',
+      text: 'text-orange-600 dark:text-orange-600',
+      border: 'border-orange-200 dark:border-orange-200',
+      hover: 'hover:border-orange-300 dark:hover:border-orange-300'
     }
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors duration-300">
+    <section className="py-20 bg-[var(--background)] dark:bg-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -99,10 +99,10 @@ const FeaturedSections = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-[var(--foreground)] dark:text-white mb-4">
             Explore Our Learning Sections
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--muted)] dark:text-gray-300 max-w-3xl mx-auto">
             Discover comprehensive resources designed to enhance your educational journey 
             across literacy, numeracy, career development, and premium materials.
           </p>
@@ -116,7 +116,7 @@ const FeaturedSections = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`bg-white dark:bg-slate-700 rounded-2xl shadow-lg border-2 ${(colorClasses as any)[section.color].border} ${(colorClasses as any)[section.color].hover} transition-all duration-300 hover:shadow-xl overflow-hidden group`}
+              className={`bg-[var(--card-bg)] dark:bg-slate-700 rounded-2xl shadow-lg border-2 ${(colorClasses as any)[section.color].border} ${(colorClasses as any)[section.color].hover} transition-all duration-300 hover:shadow-xl overflow-hidden group`}
             >
               {/* Card Header */}
               <div className={`bg-gradient-to-r ${(colorClasses as any)[section.color].bg} p-6 text-white relative overflow-hidden`}>
@@ -138,39 +138,39 @@ const FeaturedSections = () => {
               <div className="p-6">
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-[var(--foreground)] dark:text-white mb-3">Key Features:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {section.features.map((feature) => (
                       <div key={feature} className="flex items-center space-x-2">
                         <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${(colorClasses as any)[section.color].bg}`} />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-[var(--muted)] dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 dark:bg-slate-600 rounded-lg transition-colors duration-300">
+                <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-[var(--hover-bg)] dark:bg-slate-600 rounded-lg transition-colors duration-300">
                   <div className="text-center">
                     <div className="flex items-center justify-center mb-1">
                       <Users className="h-4 w-4 text-gray-500 dark:text-gray-400 mr-1" />
                     </div>
-                    <div className="font-bold text-gray-900 dark:text-white">{section.stats.users}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Users</div>
+                    <div className="font-bold text-[var(--foreground)] dark:text-white">{section.stats.users}</div>
+                    <div className="text-xs text-[var(--muted)] dark:text-gray-400">Users</div>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center justify-center mb-1">
                       <Star className="h-4 w-4 text-yellow-500 dark:text-yellow-400 mr-1" />
                     </div>
-                    <div className="font-bold text-gray-900 dark:text-white">{section.stats.rating}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Rating</div>
+                    <div className="font-bold text-[var(--foreground)] dark:text-white">{section.stats.rating}</div>
+                    <div className="text-xs text-[var(--muted)] dark:text-gray-400">Rating</div>
                   </div>
                   <div className="text-center">
                     <div className="flex items-center justify-center mb-1">
                       <TrendingUp className="h-4 w-4 text-green-500 dark:text-green-400 mr-1" />
                     </div>
-                    <div className="font-bold text-gray-900 dark:text-white">{section.stats.growth}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Growth</div>
+                    <div className="font-bold text-[var(--foreground)] dark:text-white">{section.stats.growth}</div>
+                    <div className="text-xs text-[var(--muted)] dark:text-gray-400">Growth</div>
                   </div>
                 </div>
 
@@ -197,11 +197,11 @@ const FeaturedSections = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <div className="bg-white dark:bg-slate-700 rounded-2xl shadow-lg p-8 border border-gray-200 dark:border-slate-600 transition-colors duration-300">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-[var(--card-bg)] dark:bg-slate-700 rounded-2xl shadow-lg p-8 border border-[var(--border)] dark:border-slate-600 transition-colors duration-300">
+            <h3 className="text-2xl font-bold text-[var(--foreground)] dark:text-white mb-4">
               Ready to Start Your Learning Journey?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-[var(--muted)] dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               Join thousands of educators and learners who are already transforming their 
               educational experience with our comprehensive resources.
             </p>
@@ -210,7 +210,7 @@ const FeaturedSections = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-blue-600 dark:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200"
+                  className="bg-[var(--primary)] dark:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-[var(--secondary)] dark:hover:bg-blue-600 transition-colors duration-200"
                 >
                   Browse Store
                 </motion.button>
@@ -219,7 +219,7 @@ const FeaturedSections = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-slate-600 transition-colors duration-200"
+                className="border-2 border-[var(--primary)] dark:border-blue-400 text-[var(--primary)] dark:text-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-[var(--hover-bg)] dark:hover:bg-slate-600 transition-colors duration-200"
                 >
                   Get Free Resources
                 </motion.button>

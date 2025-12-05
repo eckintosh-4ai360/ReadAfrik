@@ -205,23 +205,23 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, product })
           {!isSuccess && (
             <div className="p-6">
               {/* Product Summary */}
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 mb-6 border border-blue-100">
+              <div className="bg-white dark:bg-gradient-to-r dark:from-blue-50 dark:to-purple-50 rounded-lg p-4 mb-6 border border-gray-200 dark:border-blue-100">
                 <div className="flex items-center space-x-4">
                   <div className="text-4xl">{product.image}</div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-gray-900">{product.title}</h3>
-                    <p className="text-2xl font-bold text-blue-600">${product.price.toFixed(2)}</p>
+                    <p className="text-2xl font-bold text-orange-600 dark:text-blue-600">${product.price.toFixed(2)}</p>
                   </div>
                 </div>
               </div>
 
               {/* Paystack Info */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+              <div className="bg-orange-50 dark:bg-blue-50 border border-orange-200 dark:border-blue-200 rounded-lg p-4 mb-6">
                 <div className="flex items-start space-x-3">
-                  <Lock className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <Lock className="h-5 w-5 text-orange-600 dark:text-blue-600 mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium text-blue-900">Secure Payment by Paystack</p>
-                    <p className="text-xs text-blue-700 mt-1">
+                    <p className="text-sm font-medium text-orange-900 dark:text-blue-900">Secure Payment by Paystack</p>
+                    <p className="text-xs text-orange-700 dark:text-blue-700 mt-1">
                       Supports Cards, Bank Transfers, USSD, and Mobile Money
                     </p>
                   </div>
@@ -248,7 +248,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, product })
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent"
                     placeholder="John Doe"
                     required
                   />
@@ -264,7 +264,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, product })
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent"
                     placeholder="your@email.com"
                     required
                   />
@@ -280,7 +280,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, product })
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent"
                     placeholder="+234 XXX XXX XXXX"
                   />
                 </div>
@@ -292,7 +292,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, product })
                 whileTap={{ scale: 0.98 }}
                 onClick={handlePayment}
                 disabled={isProcessing || !formData.email || !formData.name}
-                className="w-full mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg"
+                className="w-full mt-6 bg-gradient-to-r from-orange-500 to-yellow-500 dark:from-blue-600 dark:to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-yellow-600 dark:hover:from-blue-700 dark:hover:to-purple-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg"
               >
                 {isProcessing ? (
                   <>

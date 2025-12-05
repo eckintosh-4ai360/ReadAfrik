@@ -1,13 +1,27 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #2d2d2d;
+  --muted: #4a4a4a;
   --header-bg: #ffffff;
-  --card-bg: #ffffff;
-  --border: #e2e8f0;
-  --title: #5465b4;
-  --menus: #c79a40;
+  --card-bg: #fffdf7;
+  --border: #f5f1eb;
+  --title: #ff6b35;
+  --menus: #ffa500;
+  --primary: #ff6b35;
+  --secondary: #ffa500;
+  --accent: #ffb700;
+  --hover-bg: #fff5e6;
+  --track-bg: rgba(255, 165, 0, 0.18);
+  --soft-secondary: #fff0d6;
+  --soft-accent: #ffe8b5;
+  --glow: rgba(255, 165, 0, 0.2);
+  --card-shadow: 0 25px 60px rgba(255, 165, 0, 0.12);
 }
 
 .dark {
@@ -27,11 +41,88 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  background-color: var(--background);
+  transition: background-color 0.3s ease;
+}
+
+html.light {
+  --background: #ffffff;
+  --foreground: #2d2d2d;
+  --muted: #4a4a4a;
+  --header-bg: #ffffff;
+  --card-bg: #fffdf7;
+  --border: #f5f1eb;
+  --title: #ff6b35;
+  --menus: #ffa500;
+  --primary: #ff6b35;
+  --secondary: #ffa500;
+  --accent: #ffb700;
+  --hover-bg: #fff5e6;
+  --track-bg: rgba(255, 165, 0, 0.18);
+  --soft-secondary: #fff0d6;
+  --soft-accent: #ffe8b5;
+  --glow: rgba(255, 165, 0, 0.2);
+  --card-shadow: 0 25px 60px rgba(255, 165, 0, 0.12);
+  background-color: #ffffff !important;
+}
+
+html.dark {
+  --background: #1e293b;
+  --foreground: #f1f5f9;
+  --header-bg: #0f172a;
+  --card-bg: #334155;
+  --border: #475569;
+  --title: #818cf8;
+  --menus: #fbbf24;
+  background-color: #1e293b !important;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background) !important;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+html.light body {
+  background-color: #ffffff !important;
+  color: #2d2d2d;
+}
+
+html.dark body {
+  background-color: #1e293b !important;
+  color: #f1f5f9;
+}
+
+/* Ensure main content areas have proper backgrounds */
+main {
+  background-color: var(--background) !important;
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-surface {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+
+.pill-accent {
+  background-color: var(--soft-secondary);
+  color: var(--primary);
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  box-shadow: 0 12px 35px var(--glow);
+}
+
+.secondary-button {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .title {

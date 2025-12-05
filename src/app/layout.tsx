@@ -37,9 +37,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
+                const root = document.documentElement;
                 const theme = localStorage.getItem('theme');
                 if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
+                  root.classList.add('dark');
+                  root.classList.remove('light');
+                } else {
+                  root.classList.add('light');
+                  root.classList.remove('dark');
                 }
               } catch (e) {}
             `,
@@ -49,7 +54,7 @@ export default function RootLayout({
           <CartProvider>
             <PaystackScript />
             <Header />
-            <main className="min-h-screen">
+            <main className="min-h-screen transition-colors duration-300">
               {children}
             </main>
             <Footer />

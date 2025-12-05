@@ -97,7 +97,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white dark:bg-slate-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
+      <header className="bg-[var(--header-bg)] dark:bg-slate-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -123,8 +123,8 @@ const Header = () => {
                         whileHover={{ y: -2 }}
                         className={`flex items-center space-x-1 px-4 py-2 rounded-lg transition-all duration-200 menus relative ${
                           active
-                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-slate-700 font-semibold shadow-sm'
-                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700/50'
+                            ? 'text-[var(--primary)] dark:text-blue-400 bg-[var(--hover-bg)] dark:bg-slate-700 font-semibold shadow-sm'
+                            : 'text-[var(--foreground)] dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700/50'
                         }`}
                       >
                         <item.icon className={`h-4 w-4 ${active ? 'animate-pulse' : ''}`} />
@@ -134,7 +134,7 @@ const Header = () => {
                         {active && (
                           <motion.div
                             layoutId="activeNav"
-                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600"
+                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] dark:from-blue-600 dark:to-purple-600"
                             initial={false}
                             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                           />
@@ -146,7 +146,7 @@ const Header = () => {
                     {item.submenu.length > 0 && (
                       <motion.div 
                         initial={{ opacity: 0, y: -10 }}
-                        className="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-gray-100 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden z-50"
+                        className="absolute left-0 mt-2 w-48 bg-[var(--card-bg)] dark:bg-slate-800 rounded-lg shadow-xl border border-[var(--border)] dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden z-50"
                       >
                         <div className="py-2">
                           {item.submenu.map((subItem, index) => (
@@ -160,8 +160,8 @@ const Header = () => {
                                 href={subItem.href}
                                 className={`block px-4 py-2.5 text-sm transition-all duration-200 ${
                                   pathname === subItem.href
-                                    ? 'bg-blue-50 dark:bg-slate-700 text-blue-600 dark:text-blue-400 font-medium border-l-2 border-blue-600 dark:border-blue-400'
-                                    : 'text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-400 hover:pl-5'
+                                    ? 'bg-[var(--hover-bg)] dark:bg-slate-700 text-[var(--primary)] dark:text-blue-400 font-medium border-l-2 border-[var(--primary)] dark:border-blue-400'
+                                    : 'text-[var(--foreground)] dark:text-gray-300 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:pl-5'
                                 }`}
                               >
                                 {subItem.name}
@@ -183,7 +183,7 @@ const Header = () => {
                 whileHover={{ scale: 1.05, rotate: 15 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleTheme}
-                className="relative p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-all duration-200"
+                className="relative p-2 rounded-lg text-[var(--foreground)] dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-all duration-200"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
@@ -198,14 +198,14 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={openCart}
-                className="relative p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-all duration-200"
+                className="relative p-2 rounded-lg text-[var(--foreground)] dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-all duration-200"
               >
                 <CartIcon className="h-6 w-6" />
                 {getTotalItems() > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg"
+                    className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-500 to-yellow-500 dark:from-blue-600 dark:to-purple-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold shadow-lg"
                   >
                     {getTotalItems()}
                   </motion.span>
@@ -217,7 +217,7 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 transition-all duration-200"
+                className="md:hidden p-2 rounded-lg text-[var(--foreground)] dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700 transition-all duration-200"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </motion.button>
@@ -230,7 +230,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden py-4 border-t border-gray-200 dark:border-slate-700"
+              className="md:hidden py-4 border-t border-[var(--border)] dark:border-slate-700"
             >
               {menuItems.map((item) => {
                 const active = isActive(item.href);
@@ -240,15 +240,15 @@ const Header = () => {
                       href={item.href}
                       className={`flex items-center space-x-2 py-2 px-3 rounded-lg transition-all duration-200 ${
                         active
-                          ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-slate-700 font-semibold'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700/50'
+                          ? 'text-[var(--primary)] dark:text-blue-400 bg-[var(--hover-bg)] dark:bg-slate-700 font-semibold'
+                          : 'text-[var(--foreground)] dark:text-gray-300 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700/50'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <item.icon className={`h-4 w-4 ${active ? 'animate-pulse' : ''}`} />
                       <span className="font-medium">{item.name}</span>
                       {active && (
-                        <span className="ml-auto w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></span>
+                        <span className="ml-auto w-2 h-2 bg-[var(--primary)] dark:bg-blue-400 rounded-full"></span>
                       )}
                     </Link>
                     {item.submenu.length > 0 && (
@@ -259,8 +259,8 @@ const Header = () => {
                             href={subItem.href}
                             className={`block text-sm py-1.5 px-3 rounded-md transition-all duration-200 ${
                               pathname === subItem.href
-                                ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-slate-700 font-medium'
-                                : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700/50'
+                                ? 'text-[var(--primary)] dark:text-blue-400 bg-[var(--hover-bg)] dark:bg-slate-700 font-medium'
+                                : 'text-[var(--muted)] dark:text-gray-400 hover:text-[var(--primary)] dark:hover:text-blue-400 hover:bg-[var(--hover-bg)] dark:hover:bg-slate-700/50'
                             }`}
                             onClick={() => setIsMenuOpen(false)}
                           >

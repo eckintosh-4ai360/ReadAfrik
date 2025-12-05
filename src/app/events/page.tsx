@@ -210,7 +210,7 @@ const EventsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -222,7 +222,7 @@ const EventsPage = () => {
           >
             <div className="flex justify-center mb-6">
               <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-full transition-colors duration-300">
-                <Calendar className="h-12 w-12 text-blue-600 dark:text-blue-400" />
+                <Calendar className="h-12 w-12 text-orange-600 dark:text-blue-400" />
               </div>
             </div>
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -332,7 +332,7 @@ const EventsPage = () => {
                     </div>
 
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-lg font-bold text-blue-600 dark:text-blue-400">{event.price}</span>
+                      <span className="text-lg font-bold text-orange-600 dark:text-blue-400">{event.price}</span>
                       <span className="text-sm text-gray-600 dark:text-gray-400">{event.attendees}/{event.maxAttendees} seats</span>
                     </div>
 
@@ -440,7 +440,7 @@ const EventsPage = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleRegister(event.id)}
-                    className="w-full flex items-center justify-center space-x-2 bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 group-hover:shadow-md"
+                    className="w-full flex items-center justify-center space-x-2 bg-orange-600 dark:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 dark:hover:bg-blue-600 transition-colors duration-200 group-hover:shadow-md"
                   >
                     <span>Register Now</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -546,7 +546,7 @@ const EventsPage = () => {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200"
+                    className="flex-1 px-6 py-3 bg-orange-600 dark:bg-blue-700 text-white rounded-lg font-semibold hover:bg-orange-700 dark:hover:bg-blue-600 transition-colors duration-200"
                   >
                     Register
                   </button>
